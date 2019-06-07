@@ -1,6 +1,6 @@
 public class BankAccount {
-    protected double balance = 1000;
-    protected float commission;
+    private double balance = 1000;
+    private float commission = 0;
 
     public void putMoney(int amount) {
         balance += amount;
@@ -26,5 +26,9 @@ public class BankAccount {
 
     public void printBalance() {
         System.out.println("Ваш баланс: " + balance + " рублей.");
+    }
+
+    void setCommission(float com){
+        commission = com;
     }
 }
