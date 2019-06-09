@@ -1,6 +1,6 @@
 public class BankAccount {
     private double balance = 1000;
-    private float commission = 0;
+    private double commission = 0;
 
     public void putMoney(int amount) {
         balance += amount;
@@ -8,13 +8,16 @@ public class BankAccount {
     }
 
     public void withdraw(int amount) {
-        float comAmount = amount* commission;
+        double comAmount = amount * commission;
         if (balance < amount + comAmount) {
             System.out.println("Недостаточно денег на счету.");
             return;
         }
-        if(comAmount != 0.0f){
-            System.out.println("Комиссия составила " + comAmount + " рублей");
+
+        //if (Math.abs(comission) < 0.00000001) {    -- можно так, но это вроде излищне тут
+        if (commission != 0) {
+            System.out.printf("Комиссия составила %.2f рублей", comAmount);
+            System.out.println();
         }
         balance -= (amount + comAmount);
         System.out.println("Пожалуйста, заберите деньги и карту.");
@@ -25,10 +28,11 @@ public class BankAccount {
     }
 
     public void printBalance() {
-        System.out.println("Ваш баланс: " + balance + " рублей.");
+        System.out.printf("Ваш баланс: %.2f рублей.", balance);
+        System.out.println();
     }
 
-    void setCommission(float com){
+    void setCommission(float com) {
         commission = com;
     }
 }
