@@ -23,9 +23,6 @@ public class BankAccount {
         System.out.println("Пожалуйста, заберите деньги и карту.");
     }
 
-    public double getBalance() {
-        return balance;
-    }
 
     public void printBalance() {
         System.out.printf("Ваш баланс: %.2f рублей.", balance);
