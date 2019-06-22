@@ -1,6 +1,6 @@
-public class OperationsOfficer extends Worker {
+public class OperationsOfficer extends Company.Worker {
 
-    public OperationsOfficer(int salary) {
+    OperationsOfficer(int salary) {
         fixedSalary = salary;
     }
 

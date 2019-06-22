@@ -3,10 +3,8 @@ import java.util.ArrayList;
 public class Loader {
     public static void main(String[] args) {
 
-        // HR-ов в компании нет, поэтому зарплаты будем платить не очень эффеективно
-
         for (int i = 0; i < 100; i++) {
-            Worker employee = new OperationsOfficer(10000 + (int)(Math.random()*40000));
+            Company.Worker employee = new OperationsOfficer(10000 + (int)(Math.random()*40000));
             employee.hire();
         }
 
@@ -17,23 +15,23 @@ public class Loader {
         }
 
         for (int i = 0; i < 30; i++) {
-            Worker employee = new TopManager(40000 + (int)(Math.random()*100000));
+            Company.Worker employee = new TopManager(40000 + (int)(Math.random()*100000));
             employee.hire();
         }
 
         Company.printIncome();
 
-        ArrayList<Employee> lowList = Company.getLowestSalaryStaff(10);
-        ArrayList<Employee> topList = Company.getTopSalaryStaff(5);
+        ArrayList<Company.Worker> lowList = Company.getLowestSalaryStaff(10);
+        ArrayList<Company.Worker> topList = Company.getTopSalaryStaff(5);
 
         System.out.println();
-        for(Employee emp : lowList){
+        for(Company.Worker emp : lowList){
             System.out.println(emp.getMonthSalary() + " - " + emp.getClass());
         }
 
         System.out.println();
 
-        for(Employee emp : topList){
+        for(Company.Worker emp : topList){
             System.out.println(emp.getMonthSalary() + " - " + emp.getClass());
         }
 
