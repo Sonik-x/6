@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Company {
+abstract class Company {
 
     private static long income;
     private static ArrayList<Worker> stuff = new ArrayList<>();
